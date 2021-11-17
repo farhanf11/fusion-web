@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Metas -->
+        <meta charset="utf-8" />
+        <title>FP Fusion - Hadir Untuk Mengabadikannya</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Css -->
+        <link
+          href="css/bootstrap.css"
+          rel="stylesheet"
+          type="text/css"
+          media="all"
+        />
+        <link href="css/base.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
+        <link
+          href="css/flexslider.css"
+          rel="stylesheet"
+          type="text/css"
+          media="all"
+        />
+        <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,700"
+          rel="stylesheet"
+        />
+        <link rel="shortcut icon" href="./img/FP.ico" />
+    </head>
+    <body>
+        <header class="header default" style="background-color: black;">
+            <div class="left-part">
+            <a class="logo scroll" href="index.html">
+                <img class="mb-0" src="img/FP.png" alt="" />
+            </a>
+            </div>
+            <div class="right-part">
+            <nav class="main-nav">
+                <div class="toggle-mobile-but">
+                <a href="#" class="mobile-but">
+                    <div class="lines"></div>
+                </a>
+                </div>
+                <ul>
+                <li><a class="scroll" href="#hero">Home</a></li>
+                <li><a class="scroll" href="#about">About</a></li>
+                <li><a class="scroll" href="#package">Pricelist</a></li>
+                <li><a class="scroll" href="#gallery">Gallery</a></li>
+                <li><a class="scroll" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="page-content page-auth mt-5 pt-5 mb-5" id="register">
+          <div class="section-store-auth">
+            <div class="container" style="justify-content: center;">
+              <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4 col-12 mb-5">
+                    <h2 class="text-center" style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 30px; ">Login Account</h2>
+                    <form class="login-form" action="proses_Login.php" method="POST">
+                      <div class="form-group">
+                        <label>Email Address</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            aria-describedby="emailHelp"
+                            v-model="email"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Username</label>
+                        <input
+                            type="username"
+                            class="form-control"
+                            aria-describedby="username"
+                            v-model="username"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" />
+                      </div>
+                      <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="confirm-password" class="form-control" />
+                      </div>
+                      <a href="index.html" class="btn btn-dark btn-block mt-4" style="font-family: Poppins; font-style: normal; font-weight: normal;">
+                        Register
+                      </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer gap-double-sm bg-secondary">
+            <!--Container-->
+            <div class="container">
+            <!--Row-->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-4">
+                <div class="block-content text-center">
+                    <div class="logo">
+                    <img class="" src="img/FP.png" alt="" />
+                    </div>
+                    <p class="text-small">
+                    &copy; 2021 All rights reserved Fusion. <br />
+                    A product of <span>Kelompok Ecommerce</span>
+                    </p>
+                    <a class="top scroll" href="#header">
+                    <i class="icon-up-circled-1"></i>
+                    </a>
+                </div>
+                </div>
+            </div>
+            <!--End row-->
+            </div>
+            <!--End container-->
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="./vendor/jquery/jquery.slim.min.js"></script>
+        <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init();
+        </script>
+        <script src="./script/navbar.scroll.js"></script>
+    </body>
+</html>
