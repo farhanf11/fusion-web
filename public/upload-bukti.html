@@ -120,13 +120,15 @@
           <div class="col-lg-1"></div>
           <div class="col-lg-5">
             <div class="card">
+              <form id="upload-bukti" action="/order" method="post">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <div class="text-dark">
                     <p>Paket Foto</p>
                     <input type="text" 
                     placeholder="Futsal Sparing 2 Tim" 
-                    class="w-100 rounded-lg border py-2 pl-2" 
+                    class="w-100 rounded-lg border py-2 pl-2"
+                    name="paket" 
                     >
                   </div> 
                 </li>
@@ -175,8 +177,11 @@
                     </form>
                   </div> 
                 </li>
+                <a class="btn btn-primary" onclick="document.getElementById('upload-bukti').submit()">
+                  konfirmasi
+                </a>
               </ul>
-              <a href="order-histori.html" class="btn btn-primary">konfirmasi</a>
+            </form>
             </div>
           </div>
         </div>
