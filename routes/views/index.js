@@ -1,25 +1,61 @@
 const router = require('express').Router()
 const path = require('path')
+const { isAuth } = require('../../middleware/auth')
 
-router.get('/album', (req, res) => res.sendFile(path.join(__dirname + '/../../public/album.html')))
-router.get('/booking', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../../public/booking.html')),
+router.get('', isAuth, (req, res) =>
+  res.sendFile(
+    path.join(__dirname + '/../../public/index.html'),
+  ),
 )
-router.get('/dashboard-transaction-details', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../../public/dashboard-transaction-details.html')),
+router.get('/album', isAuth, (req, res) =>
+  res.sendFile(
+    path.join(__dirname + '/../../public/album.html'),
+  ),
 )
-router.get('/invoice', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../../public/invoice.html')),
+router.get('/booking', isAuth, (req, res) =>
+  res.sendFile(
+    path.join(__dirname + '/../../public/booking.html'),
+  ),
 )
-router.get('/login', (req, res) => res.sendFile(path.join(__dirname + '/../../public/login.html')))
-router.get('/order-histori', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../../public/order-histori.html')),
+router.get(
+  '/dashboard-transaction-details',
+  isAuth,
+  (req, res) =>
+    res.sendFile(
+      path.join(
+        __dirname +
+          '/../../public/dashboard-transaction-details.html',
+      ),
+    ),
+)
+router.get('/invoice', isAuth, (req, res) =>
+  res.sendFile(
+    path.join(__dirname + '/../../public/invoice.html'),
+  ),
+)
+router.get('/login', (req, res) =>
+  res.sendFile(
+    path.join(__dirname + '/../../public/login.html'),
+  ),
+)
+router.get('/order-histori', isAuth, (req, res) =>
+  res.sendFile(
+    path.join(
+      __dirname + '/../../public/order-histori.html',
+    ),
+  ),
 )
 router.get('/register', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../../public/register.html')),
+  res.sendFile(
+    path.join(__dirname + '/../../public/register.html'),
+  ),
 )
-router.get('/upload-bukti', (req, res) =>
-  res.sendFile(path.join(__dirname + '/../../public/upload-bukti.html')),
+router.get('/upload-bukti', isAuth, (req, res) =>
+  res.sendFile(
+    path.join(
+      __dirname + '/../../public/upload-bukti.html',
+    ),
+  ),
 )
 
 module.exports = router

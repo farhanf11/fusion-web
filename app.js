@@ -1,8 +1,18 @@
 const express = require('express')
 const path = require('path')
-const morgan = require('morgan')
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
+const passport = require('passport')
+const passportConfig = require('./config/passport')
 
 const app = express()
+
+// DB connection
+const sequelize = require('./config/connection')
+sequelize
+  .authenticate()
+  .then(() => console.log('Database connected'))
+  .catch((err) => console.log(err))
 
 // Logger
 // app.use(morgan('dev'))
@@ -10,15 +20,31 @@ const app = express()
 // Body Parser
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
 
 // Static folder
 app.use(express.static(__dirname + '/public'))
 
+// Session
+app.use(
+  session({
+    secret: 'some secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+  }),
+)
+
+// Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
+// Views Routes
 app.use('/', require('./routes/views/index'))
 
 // API Routes
-app.post('/order', (req, res) => {
-  console.log(req.body)
-})
+app.use('/api', require('./routes/api/users'))
 
-app.listen(3000, () => console.log('Server running on port 3000...'))
+app.listen(3000, () =>
+  console.log('Server running on port 3000...'),
+)
