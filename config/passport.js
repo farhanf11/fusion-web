@@ -9,7 +9,6 @@ passport.use(
     (email, password, done) => {
       User.findOne({ where: { email: email } })
         .then((user) => {
-          console.log(user)
           if (!user) {
             return done(null, false, {
               msg: 'There is no user with that email',

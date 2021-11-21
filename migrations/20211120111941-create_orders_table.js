@@ -21,7 +21,7 @@ module.exports = {
         defaultValue: 50000,
       },
       uploadTransaction: {
-        type: Sequelize.STRING,
+        type: Sequelize.BLOB('long'),
         allowNull: false,
       },
       userId: { type: Sequelize.INTEGER, allowNull: false },

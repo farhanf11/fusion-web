@@ -22,6 +22,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
+// Form data parser
+
 // Static folder
 app.use(express.static(__dirname + '/public'))
 
@@ -44,6 +46,7 @@ app.use('/', require('./routes/views/index'))
 
 // API Routes
 app.use('/api', require('./routes/api/users'))
+app.use('/api/order', require('./routes/api/orders'))
 
 app.listen(3000, () =>
   console.log('Server running on port 3000...'),

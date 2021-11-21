@@ -14,7 +14,7 @@ module.exports = sequelize.define('Order', {
   bankAccount: { type: Sequelize.STRING, allowNull: false },
   total: { type: Sequelize.INTEGER, defaultValue: 50000 },
   uploadTransaction: {
-    type: Sequelize.STRING,
+    type: Sequelize.BLOB('long'),
     allowNull: false,
   },
   userId: { type: Sequelize.INTEGER, allowNull: false },
