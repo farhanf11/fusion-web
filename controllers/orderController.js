@@ -38,4 +38,14 @@ const uploadTransaction = (req, res) => {
     .catch((err) => console.log(err))
 }
 
-module.exports = { uploadTransaction }
+const getOrders = (req, res) => {
+  const { id } = req.user
+
+  Order.findAll({ where: { userId: id } })
+    .then((result) =>
+      res.json({ success: true, data: result }),
+    )
+    .catch((err) => res.json({ success: false, err }))
+}
+
+module.exports = { uploadTransaction, getOrders }

@@ -22,10 +22,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
-// Form data parser
-
 // Static folder
 app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public/css'))
 
 // Session
 app.use(

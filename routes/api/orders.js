@@ -3,6 +3,7 @@ const router = express.Router()
 const uploadImage = require('../../middleware/uploadImage')
 const {
   uploadTransaction,
+  getOrders,
 } = require('../../controllers/orderController')
 
 router.post(
@@ -10,5 +11,7 @@ router.post(
   uploadImage.single('uploadTransaction'),
   uploadTransaction,
 )
+
+router.get('/order-history', getOrders)
 
 module.exports = router
