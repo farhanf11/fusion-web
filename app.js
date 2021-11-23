@@ -23,8 +23,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 // Static folder
-app.use(express.static(__dirname + '/public'))
-app.use(express.static(__dirname + '/public/css'))
+app.use(express.static(path.join(__dirname, '/public')))
 
 // Session
 app.use(

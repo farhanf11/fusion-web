@@ -7,7 +7,7 @@ const uploadTransaction = (req, res) => {
   Order.belongsTo(User)
 
   if (!req.file) {
-    res.status(400).redirec('/upload-bukti')
+    res.status(400).redirect('/upload-bukti')
   }
 
   User.findByPk(req.user.id)
